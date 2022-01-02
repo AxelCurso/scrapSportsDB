@@ -28,7 +28,8 @@ def getMatchDatas(match, index):
     # driver = webdriver.Chrome()
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    driver = webdriver.Chrome("/home/axel/chromedriver", options=chrome_options)
+    # driver = webdriver.Chrome("/home/axel/chromedriver", options=chrome_options)
+    driver = webdriver.Chrome("/Users/axelcurso/chromedriver", options=chrome_options)
     driver.get(url)
     while (check_exists_by_class(driver, "has-reject-all-button") == False):
         continue
@@ -117,7 +118,8 @@ def getDatabase(url):
     # driver = webdriver.Chrome()
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    driver = webdriver.Chrome("/home/axel/chromedriver", options=chrome_options)
+    # driver = webdriver.Chrome("/home/axel/chromedriver", options=chrome_options)
+    driver = webdriver.Chrome("/Users/axelcurso/chromedriver", options=chrome_options)
     driver.get(url)
     while (check_exists_by_class(driver, "has-reject-all-button") == False):
         continue
