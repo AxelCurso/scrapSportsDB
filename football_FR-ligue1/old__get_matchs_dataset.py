@@ -126,13 +126,13 @@ def getDatabase(url):
     ActionChains(driver).click(driver.find_element_by_id("onetrust-reject-all-handler")).perform()
     while (check_exists_by_class(driver, "event__more")):
         next = driver.find_element_by_class_name("event__more")
-        actions = ActionChains(driver);
+        actions = ActionChains(driver)
         desired_y = (next.size['height'] / 2) + next.location['y']
         current_y = (driver.execute_script('return window.innerHeight') / 2) + driver.execute_script('return window.pageYOffset')
         scroll_y_by = desired_y - current_y
         driver.execute_script("window.scrollBy(0, arguments[0]);", scroll_y_by)
         # actions.scroll_into_view(next).perform();
-        actions.click(next).perform();
+        actions.click(next).perform()
         time.sleep(0.5)
     links = driver.find_elements_by_class_name("event__match")
     print("   Found: " + str(len(links)) + " matchs.")
