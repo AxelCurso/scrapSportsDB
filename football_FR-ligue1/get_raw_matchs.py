@@ -74,8 +74,8 @@ def getSingleStats(url):
     stats = []
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    driver = webdriver.Chrome("/home/axel/chromedriver", options=chrome_options)
-    # driver = webdriver.Chrome("/Users/axelcurso/chromedriver", options=chrome_options)
+    # driver = webdriver.Chrome("/home/axel/chromedriver", options=chrome_options)
+    driver = webdriver.Chrome("/Users/axelcurso/chromedriver", options=chrome_options)
     driver.get(url)
     if (check_exists_by_class(driver, "didomi-continue-without-agreeing")):
         continueWithoutAgreeing = driver.find_element_by_class_name("didomi-continue-without-agreeing")
@@ -184,8 +184,8 @@ def getMatchStats(url):
     stats = []
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    driver = webdriver.Chrome("/home/axel/chromedriver", options=chrome_options)
-    # driver = webdriver.Chrome("/Users/axelcurso/chromedriver", options=chrome_options)
+    # driver = webdriver.Chrome("/home/axel/chromedriver", options=chrome_options)
+    driver = webdriver.Chrome("/Users/axelcurso/chromedriver", options=chrome_options)
     driver.get(url)
     if (check_exists_by_class(driver, "didomi-continue-without-agreeing")):
         continueWithoutAgreeing = driver.find_element_by_class_name("didomi-continue-without-agreeing")
@@ -211,8 +211,8 @@ def getMatchs(preUrl, postUrl):
     matchs = []
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    driver = webdriver.Chrome("/home/axel/chromedriver", options=chrome_options)
-    # driver = webdriver.Chrome("/Users/axelcurso/chromedriver", options=chrome_options)
+    # driver = webdriver.Chrome("/home/axel/chromedriver", options=chrome_options)
+    driver = webdriver.Chrome("/Users/axelcurso/chromedriver", options=chrome_options)
     driver.get(preUrl)
     if (check_exists_by_class(driver, "didomi-continue-without-agreeing")):
         continueWithoutAgreeing = driver.find_element_by_class_name("didomi-continue-without-agreeing")
@@ -239,14 +239,15 @@ else:
     year = date.today().strftime("%Y")
 arg = int(str(sys.argv[1]))
 nbYearToGet = int(year) - arg + 1
-allMatchs = []
 header = ["id", "date", "hour", "leagueMatchNb", "idHome", "homeTeam", "idAway", "awayTeam", "h_score", "a_score", "h_possession", "h_duelsWon", "h_aerialDuelsWon", "h_interceptions", "h_offPlays", "h_corners", "h_passes", "h_longPasses", "h_succeededPasses", "h_succeededPassesOppositeSide", "h_centers", "h_succeededCenters", "h_shots", "h_targetedShots", "h_counteredShots", "h_extSurfaceShots", "h_intSurfaceShots", "h_precisionShots", "h_tackles", "h_succeededTackles", "h_clears", "h_concededFaults", "h_yellowCards", "h_redCards", "a_possession", "a_duelsWon", "a_aerialDuelsWon", "a_interceptions", "a_offPlays", "a_corners", "a_passes", "a_longPasses", "a_succeededPasses", "a_succeededPassesOppositeSide", "a_centers", "a_succeededCenters", "a_shots", "a_targetedShots", "a_counteredShots", "a_extSurfaceShots", "a_intSurfaceShots", "a_precisionShots", "a_tackles", "a_succeededTackles", "a_clears", "a_concededFaults", "a_yellowCards", "a_redCards"]
 for i in range(nbYearToGet):
+    allMatchs = []
     matchs = []
     print("Getting data for year: " + str(int(year)-i) + "-" + str(int(year)-i+1))
     url = preUrl + str(int(year)-i) + "-" + str(int(year)-i+1)
     matchs = getMatchs(url, postUrl)
-    for match in matchs:
-        allMatchs.appen(match)
+    for day in matchs:
+        for match in day:
+            allMatchs.append(match)
     pd.DataFrame(allMatchs).to_csv(str(int(year)-i)+"-"+str(int(year)-i+1)+"/raw_matchs.csv", header=header, index=None)
     print("   Data saved: " + str(int(year)-i)+"-"+str(int(year)-i+1)+"/raw_matchs.csv")
