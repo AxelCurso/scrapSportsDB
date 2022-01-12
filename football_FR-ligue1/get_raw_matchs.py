@@ -251,3 +251,4 @@ for i in range(nbYearToGet):
             allMatchs.append(match)
     pd.DataFrame(allMatchs).to_csv(str(int(year)-i)+"-"+str(int(year)-i+1)+"/raw_matchs.csv", header=header, index=None)
     print("   Data saved: " + str(int(year)-i)+"-"+str(int(year)-i+1)+"/raw_matchs.csv")
+    print()
