@@ -73,7 +73,7 @@ for i in range(nbYearToGet):
         matchs['idHome'] = [dictIds[item] for item in matchs['homeTeam']]
         matchs['idAway'] = [dictIds[item] for item in matchs['awayTeam']]
         matchs['date'] = [strToInt(item) for item in matchs['date']]
-        print(matchs)
+        # print(matchs)
         matchs.to_csv(str(int(year)-i)+"-"+str(int(year)-i+1) + "/final_matchs.csv", header=header, index=None)
         print("   Data saved: " + str(int(year)-i)+"-"+str(int(year)-i+1)+"/final_matchs.csv")
 
