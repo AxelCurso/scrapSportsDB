@@ -9,7 +9,10 @@ import math
 def strToInt(str):
     months = {"JANVIER": "01", "FÉVRIER": "02", "MARS": "03", "AVRIL": "04", "MAI": "05", "JUIN": "06", "JUILLET": "07", "AOÛT": "08", "SEPTEMBRE": "09", "OCTOBRE": "10", "NOVEMBRE": "11", "DÉCEMBRE": "12"}
     splitted = str.split('-')
-    return (splitted[3] + months[splitted[2]] + splitted[1])
+    if (len(splitted[1]) == 2):
+        return (splitted[3] + months[splitted[2]] + splitted[1])
+    else:
+        return (splitted[3] + months[splitted[2]] + "0" + splitted[1])
 
 if (len(sys.argv) == 3):
     year = int(str(sys.argv[2]))
