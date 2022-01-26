@@ -12,6 +12,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import ElementNotInteractableException
 
 # Print iterations progress
 def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, length = 100, fill = '█', printEnd = "\r"):
@@ -70,6 +71,13 @@ def check_exists_by_class(d, c):
         return False
     return True
 
+def check_exists_by_id(d, c):
+    try:
+        d.find_element_by_id(c)
+    except NoSuchElementException:
+        return False
+    return True
+
 def getSingleStats(url):
     stats = []
     chrome_options = Options()
@@ -81,8 +89,11 @@ def getSingleStats(url):
         continueWithoutAgreeing = driver.find_element_by_class_name("didomi-continue-without-agreeing")
         actions = ActionChains(driver)
         actions.click(continueWithoutAgreeing).perform()
+    while (check_exists_by_id(driver, "nav-title-matchpage-stats") == False):
+        continue
+    nav = driver.find_element_by_id("nav-title-matchpage-stats")
     actions = ActionChains(driver)
-    actions.click(driver.find_element_by_id("nav-title-matchpage-stats")).perform()
+    actions.click(nav).perform()
     # matchInfos
     stats.append(int(url.split("=")[-1]))
     infos = driver.find_elements_by_class_name("MatchHeader-text")[0].get_attribute('innerHTML').split(" - ")
@@ -201,7 +212,10 @@ def getMatchStats(url):
     for current in goodMatchs:
         newUrl = preUrl + current
         resCurrent = []
-        resCurrent = getSingleStats(newUrl)
+        try:
+            resCurrent = getSingleStats(newUrl)
+        except ElementNotInteractableException:
+            resCurrent = []
         if (resCurrent):
             stats.append(resCurrent)
     # print(stats)
