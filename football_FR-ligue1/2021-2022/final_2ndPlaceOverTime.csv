@@ -19,4 +19,5 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 18,OM,32,9,5,3,25,14,11
 19,OGCN,33,10,4,5,29,17,12
 20,OGCN,36,11,4,5,32,17,15
-21,OGCN,36,11,4,5,32,17,15
+21,OGCN,39,12,4,5,34,18,16
+22,OGCN,42,13,4,5,36,18,18

@@ -19,4 +19,5 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 18,LOSC,25,6,7,5,23,24,-1
 19,ANGERS SCO,25,6,7,6,26,27,-1
 20,OL,25,6,8,5,27,27,0
-21,OL,25,6,8,5,27,27,0
+21,OL,28,7,8,5,28,27,1
+22,OL,31,8,8,5,29,27,2

@@ -19,4 +19,5 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 18,BREST,24,6,6,6,25,27,-2
 19,BREST,25,6,7,6,26,28,-2
 20,ANGERS SCO,25,6,7,6,26,27,-1
-21,ANGERS SCO,25,6,7,6,26,27,-1
+21,ANGERS SCO,26,6,8,6,26,27,-1
+22,ANGERS SCO,29,7,8,6,28,28,0

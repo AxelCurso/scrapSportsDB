@@ -19,4 +19,5 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 18,SRFC,31,9,4,5,33,16,17
 19,OM,33,9,6,3,26,15,11
 20,OM,36,10,6,3,27,15,12
-21,OM,36,10,6,3,27,15,12
+21,OM,37,10,7,3,28,16,12
+22,OM,40,11,7,3,30,16,14

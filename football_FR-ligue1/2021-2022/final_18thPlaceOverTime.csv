@@ -18,5 +18,6 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 17,CF63,14,3,5,9,19,32,-13
 18,FCM,15,3,6,9,22,38,-16
 19,FCM,16,3,7,9,23,39,-16
-20,FCL,16,3,7,9,15,31,-16
-21,FCL,16,3,7,9,15,31,-16
+20,FCM,16,3,7,10,23,41,-18
+21,FCL,17,3,8,10,16,34,-18
+22,FCM,19,4,7,11,24,43,-19

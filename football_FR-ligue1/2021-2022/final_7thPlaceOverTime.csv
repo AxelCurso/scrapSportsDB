@@ -17,6 +17,7 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 16,ASM,23,6,5,5,23,20,3
 17,ASM,26,7,5,5,27,20,7
 18,RCSA,26,7,5,6,34,24,10
-19,FCN,28,8,4,7,25,23,2
-20,ASM,30,8,6,6,29,23,6
-21,ASM,30,8,6,6,29,23,6
+19,ASM,29,8,5,6,29,23,6
+20,LOSC,31,8,7,5,29,27,2
+21,RCL,33,9,6,6,36,29,7
+22,ASM,33,9,6,7,35,26,9
