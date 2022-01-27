@@ -1,4 +1,5 @@
 import sys
+import os
 import datetime
 from time import sleep
 from progress.bar import ShadyBar
@@ -61,8 +62,10 @@ for day in days:
     matchsLinks += getMatchsLinks(url+str(day))
     bar.next()
 bar.finish()
-output_file = open('matchs_links.txt', 'w')
+if not os.path.exists("./"+str(year)):
+    os.makedirs("./"+str(year))
+output_file = open("./"+str(year)+'/matchs_links.txt', 'w')
 for link in matchsLinks:
     output_file.write(link+'\n')
 output_file.close()
-print("    -> Data saved at ./matchs_links.txt")
+print("    -> Data saved at ./"+str(year)+"/matchs_links.txt")
