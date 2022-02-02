@@ -29,10 +29,14 @@ def getMatchsLinks(url):
     # driver = webdriver.Chrome("/Users/axelcurso/chromedriver", options=chrome_options)
     driver.get(url)
     links = []
+    count = 0
     if (check_exists_by_id(driver, "onetrust-accept-btn-handler")):
         sleep(0.2)
         action = ActionChains(driver)
         action.click(driver.find_element_by_id("onetrust-accept-btn-handler")).perform()
+    while (check_exists_by_class(driver, "ab-in-app-message") == False and count < 10):
+        sleep(0.1)
+        count += 1
     if (check_exists_by_class(driver, "ab-in-app-message")):
         action = ActionChains(driver)
         action.click(driver.find_element_by_class_name("ab-close-button")).perform()
