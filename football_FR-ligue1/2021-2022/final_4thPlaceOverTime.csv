@@ -13,7 +13,7 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 12,RCL,21,6,3,3,21,14,7
 13,OM,23,6,5,2,20,12,8
 14,RCL,24,7,3,4,25,18,7
-15,OM,26,7,5,2,21,12,9
+15,OM,26,7,5,3,22,14,8
 16,OGCN,27,8,4,4,25,12,13
 17,OGCN,27,8,4,5,25,15,10
 18,OGCN,30,9,4,5,27,16,11
@@ -21,3 +21,4 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 20,RCSA,32,9,5,6,38,24,14
 21,RCSA,35,10,5,6,41,25,16
 22,RCSA,35,10,5,7,44,29,15
+23,RCSA,35,10,5,7,44,29,15

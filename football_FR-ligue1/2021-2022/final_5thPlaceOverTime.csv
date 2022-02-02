@@ -12,7 +12,7 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 11,SRFC,18,5,3,3,16,9,7
 12,SRFC,19,5,4,3,18,11,7
 13,SRFC,22,6,4,3,22,12,10
-14,OM,23,6,5,2,20,12,8
+14,OM,23,6,5,3,21,14,7
 15,RCL,25,7,4,4,27,20,7
 16,RCL,26,7,5,4,29,22,7
 17,RCL,27,7,6,4,30,23,7
@@ -21,3 +21,4 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 20,SRFC,31,9,4,7,34,19,15
 21,SRFC,34,10,4,7,40,19,21
 22,SRFC,34,10,4,8,41,21,20
+23,SRFC,34,10,4,8,41,21,20
