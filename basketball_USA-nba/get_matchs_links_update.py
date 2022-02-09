@@ -1,12 +1,12 @@
 import sys
-import os
+import datetime
+import pandas as pd
 from time import sleep
 from progress.bar import ShadyBar
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import NoSuchElementException
-import pandas as pd
 
 def check_exists_by_class(d, c):
     try:
@@ -21,6 +21,7 @@ def check_exists_by_id(d, c):
     except NoSuchElementException:
         return False
     return True
+
 
 def check_exists_by_tag(d, c):
     try:
@@ -156,18 +157,47 @@ def getMatchStats(url, id):
     driver.close()
     return stats
 
-if (len(sys.argv) != 2):
-    print("USAGE: python3 get_raw_matchs.py $YEAR")
-    exit()
-year = int(sys.argv[1])
-if not os.path.exists("./"+str(year)+"/matchs_links.txt"):
-    print("ERROR: no file containing the links for the year "+str(year))
-input_file = open("./"+str(year)+"/matchs_links.txt", 'r')
-lines = input_file.readlines()
-input_file.close()
-links = []
-for line in lines:
-    links.append(line.strip())
+def getMatchsLinks(url):
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")
+    driver = webdriver.Chrome("/home/axel/chromedriver", options=chrome_options)
+    # driver = webdriver.Chrome("/Users/axelcurso/chromedriver", options=chrome_options)
+    driver.get(url)
+    links = []
+    count = 0
+    if (check_exists_by_id(driver, "onetrust-accept-btn-handler")):
+        sleep(0.2)
+        action = ActionChains(driver)
+        action.click(driver.find_element_by_id("onetrust-accept-btn-handler")).perform()
+    while (check_exists_by_class(driver, "ab-in-app-message") == False and count < 10):
+        sleep(0.1)
+        count += 1
+    if (check_exists_by_class(driver, "ab-in-app-message")):
+        action = ActionChains(driver)
+        action.click(driver.find_element_by_class_name("ab-close-button")).perform()
+    # while (check_exists_by_class(driver, "ab-in-app-message") == False):
+    #     continue
+    # action = ActionChains(driver)
+    # action.click(driver.find_element_by_class_name("ab-close-button")).perform()
+    a_s = driver.find_elements_by_tag_name("a")
+    for a in a_s:
+        if (a.get_attribute("data-text") == "GAME DETAILS"):
+            links.append(a.get_attribute("href"))
+    driver.close()
+    return links
+
+url = "https://www.nba.com/games?date="
+last_update = open("./last_update.txt", "r")
+today = datetime.date.today()
+previous = datetime.date.fromisoformat(last_update.readline().strip())
+last_update.close()
+days = [previous + datetime.timedelta(days=x) for x in range((today-previous).days+1)]
+matchsLinks = []
+bar = ShadyBar("  - Getting all the matchs' links from "+str(days[0])+" to "+str(days[-1]), max=len(days), suffix="%(index)d/%(max)d | %(percent)d%% => %(elapsed)dsec. | ETA: %(eta)dsec.")
+for day in days:
+    matchsLinks += getMatchsLinks(url+str(day))
+    bar.next()
+bar.finish()
 header =    [
             "id", "date", "homeTeam", "awayTeam", "h_score", "a_score", "lc", "tc",
             "h_q1", "h_q2", "h_q3", "h_q4", "h_pitp", "h_fbpts", "h_bigld", "h_benchpts", "h_tmreb", "h_tov", "h_tmtov", "h_ptsofto",
@@ -178,12 +208,14 @@ header =    [
             "a_sa", "a_sap", "a_dfl", "a_olbr", "a_dlbr", "a_c2s", "a_c3s", "a_obo", "a_dbo"
             ]
 datas = []
-bar = ShadyBar("  - Getting all the matchs' stats for the year "+str(year), max=len(links), suffix="%(index)d/%(max)d | %(percent)d%% => %(elapsed)dsec. | ETA: %(eta)dsec.")
-for i in range(len(links)):
-    datas.append(getMatchStats(links[i], int(str(year)+"{:05d}".format(i))))
+bar = ShadyBar("  - Getting all the matchs' stats from "+str(days[0])+" to "+str(days[-1]), max=len(matchsLinks), suffix="%(index)d/%(max)d | %(percent)d%% => %(elapsed)dsec. | ETA: %(eta)dsec.")
+for i in range(len(matchsLinks)):
+    datas.append(getMatchStats(matchsLinks[i], int(str(today.year)+"{:05d}".format(i))))
     bar.next()
 bar.finish()
-pd.DataFrame(datas).to_csv(str(year)+"/raw_matchs.csv", header=header, index=None)
-print("   Data saved: " + str(year)+"/raw_matchs.csv")
+pd.DataFrame(datas).to_csv(+"./tmp_raw_matchs.csv", header=header, index=None)
+print("   Data saved: ./tmp_raw_matchs.csv")
 print()
-# print(datas)
+last_update = open("./last_update.txt", "w")
+last_update.write(str(today))
+last_update.close()
