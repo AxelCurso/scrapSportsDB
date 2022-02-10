@@ -47,6 +47,12 @@ def getMatchStats(url, id):
     if (check_exists_by_class(driver, "ab-in-app-message")):
         action = ActionChains(driver)
         action.click(driver.find_element_by_class_name("ab-close-button")).perform()
+    count = 0
+    while(check_exists_by_class(driver, "Block_blockContainer__2tJ58") == False and count < 10):
+        sleep(0.1)
+        count += 1
+    if count == 10:
+        return []
     box = driver.find_element_by_class_name("Block_blockContainer__2tJ58")
     boxTables = box.find_elements_by_class_name("GameLinescore_table__1AeWc")
     box1stpart = boxTables[0].find_element_by_tag_name("tbody").find_elements_by_tag_name("tr")
@@ -79,6 +85,8 @@ def getMatchStats(url, id):
     tables = driver.find_elements_by_class_name("StatsTable_table__2gqz8")
     rows = [k.find_element_by_tag_name("tbody").find_elements_by_tag_name("tr")[-1].find_elements_by_tag_name("td") for k in tables]
     homeElems = []
+    if (len(rows) != 2):
+        return []
     for elem in rows[1]:
         if (check_exists_by_tag(elem, "a")):
             homeElems.append(elem.find_element_by_tag_name("a").get_attribute("innerHTML"))
@@ -121,6 +129,8 @@ def getMatchStats(url, id):
     tables = driver.find_elements_by_class_name("StatsTable_table__2gqz8")
     rows = [k.find_element_by_tag_name("tbody").find_elements_by_tag_name("tr")[-1].find_elements_by_tag_name("td") for k in tables]
     homeElems = []
+    if (len(rows) != 2):
+        return []
     for elem in rows[1]:
         if (check_exists_by_tag(elem, "a")):
             homeElems.append(elem.find_element_by_tag_name("a").get_attribute("innerHTML"))
@@ -180,7 +190,9 @@ header =    [
 datas = []
 bar = ShadyBar("  - Getting all the matchs' stats for the year "+str(year), max=len(links), suffix="%(index)d/%(max)d | %(percent)d%% => %(elapsed)dsec. | ETA: %(eta)dsec.")
 for i in range(len(links)):
-    datas.append(getMatchStats(links[i], int(str(year)+"{:05d}".format(i))))
+    tmp = getMatchStats(links[i], int(str(year)+"{:05d}".format(i)))
+    if len(tmp) == 76:
+        datas.append(tmp.copy())
     bar.next()
 bar.finish()
 pd.DataFrame(datas).to_csv(str(year)+"/raw_matchs.csv", header=header, index=None)
