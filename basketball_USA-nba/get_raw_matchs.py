@@ -6,6 +6,7 @@ from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import TimeoutException
 import pandas as pd
 
 def check_exists_by_class(d, c):
@@ -34,7 +35,10 @@ def getMatchStats(url, id):
     chrome_options.add_argument("--headless")
     driver = webdriver.Chrome(executable_path="/home/axel/chromedriver", options=chrome_options)
     # driver = webdriver.Chrome("/Users/axelcurso/chromedriver", options=chrome_options)
-    driver.get(url)
+    try:
+        driver.get(url)
+    except TimeoutException:
+        return []
     stats = []
     count = 0
     if (check_exists_by_id(driver, "onetrust-accept-btn-handler")):
@@ -81,7 +85,10 @@ def getMatchStats(url, id):
     stats += [int(k.get_attribute("innerHTML")) for k in box2ndpart[1].find_elements_by_tag_name("td")]
     stats += [int(k.get_attribute("innerHTML")) for k in box2ndpart[0].find_elements_by_tag_name("td")]
     # TRADITIONAL
-    driver.get(url + "/box-score?type=traditional")
+    try:
+        driver.get(url + "/box-score?type=traditional")
+    except TimeoutException:
+        return []
     tables = driver.find_elements_by_class_name("StatsTable_table__2gqz8")
     rows = [k.find_element_by_tag_name("tbody").find_elements_by_tag_name("tr")[-1].find_elements_by_tag_name("td") for k in tables]
     homeElems = []
@@ -125,7 +132,10 @@ def getMatchStats(url, id):
     stats.append(int(awayElems[17]))
     stats.append(int(awayElems[18]))
     # HUSTLE
-    driver.get(url + "/box-score?type=hustle")
+    try:
+        driver.get(url + "/box-score?type=hustle")
+    except TimeoutException:
+        return []
     tables = driver.find_elements_by_class_name("StatsTable_table__2gqz8")
     rows = [k.find_element_by_tag_name("tbody").find_elements_by_tag_name("tr")[-1].find_elements_by_tag_name("td") for k in tables]
     homeElems = []
