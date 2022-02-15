@@ -82,8 +82,8 @@ def getSingleStats(url):
     stats = []
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    # driver = webdriver.Chrome("/home/axel/chromedriver", options=chrome_options)
-    driver = webdriver.Chrome("/Users/axelcurso/chromedriver", options=chrome_options)
+    driver = webdriver.Chrome("/home/axel/chromedriver", options=chrome_options)
+    # driver = webdriver.Chrome("/Users/axelcurso/chromedriver", options=chrome_options)
     driver.get(url)
     if (check_exists_by_class(driver, "didomi-continue-without-agreeing")):
         continueWithoutAgreeing = driver.find_element_by_class_name("didomi-continue-without-agreeing")
@@ -195,8 +195,8 @@ def getMatchStats(url):
     stats = []
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    # driver = webdriver.Chrome("/home/axel/chromedriver", options=chrome_options)
-    driver = webdriver.Chrome("/Users/axelcurso/chromedriver", options=chrome_options)
+    driver = webdriver.Chrome("/home/axel/chromedriver", options=chrome_options)
+    # driver = webdriver.Chrome("/Users/axelcurso/chromedriver", options=chrome_options)
     driver.get(url)
     if (check_exists_by_class(driver, "didomi-continue-without-agreeing")):
         continueWithoutAgreeing = driver.find_element_by_class_name("didomi-continue-without-agreeing")
@@ -225,8 +225,8 @@ def getMatchs(preUrl, postUrl):
     matchs = []
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    # driver = webdriver.Chrome("/home/axel/chromedriver", options=chrome_options)
-    driver = webdriver.Chrome("/Users/axelcurso/chromedriver", options=chrome_options)
+    driver = webdriver.Chrome("/home/axel/chromedriver", options=chrome_options)
+    # driver = webdriver.Chrome("/Users/axelcurso/chromedriver", options=chrome_options)
     driver.get(preUrl)
     if (check_exists_by_class(driver, "didomi-continue-without-agreeing")):
         continueWithoutAgreeing = driver.find_element_by_class_name("didomi-continue-without-agreeing")

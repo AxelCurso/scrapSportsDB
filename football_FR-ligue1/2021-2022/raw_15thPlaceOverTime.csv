@@ -22,3 +22,5 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 21,TROYES,20,5,5,11,19,29,-10
 22,CLERMONT,21,5,6,11,22,39,-17
 23,CLERMONT,24,6,6,11,23,39,-16
+24,CLERMONT,24,6,6,12,24,41,-17
+25,CLERMONT,24,6,6,12,24,41,-17

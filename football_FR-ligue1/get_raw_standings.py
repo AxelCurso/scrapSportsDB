@@ -76,8 +76,8 @@ def getLeaderboard(url):
     leaderboard.append(int(url.split('=')[-1]))
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    # driver = webdriver.Chrome("/home/axel/chromedriver", options=chrome_options)
-    driver = webdriver.Chrome("/Users/axelcurso/chromedriver", options=chrome_options)
+    driver = webdriver.Chrome("/home/axel/chromedriver", options=chrome_options)
+    # driver = webdriver.Chrome("/Users/axelcurso/chromedriver", options=chrome_options)
     driver.get(url)
     if (check_exists_by_class(driver, "didomi-continue-without-agreeing")):
         continueWithoutAgreeing = driver.find_element_by_class_name("didomi-continue-without-agreeing")
@@ -115,8 +115,8 @@ def getAll(url):
     all = []
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    # driver = webdriver.Chrome("/home/axel/chromedriver", options=chrome_options)
-    driver = webdriver.Chrome("/Users/axelcurso/chromedriver", options=chrome_options)
+    driver = webdriver.Chrome("/home/axel/chromedriver", options=chrome_options)
+    # driver = webdriver.Chrome("/Users/axelcurso/chromedriver", options=chrome_options)
     driver.get(url)
     if (check_exists_by_class(driver, "didomi-continue-without-agreeing")):
         continueWithoutAgreeing = driver.find_element_by_class_name("didomi-continue-without-agreeing")
@@ -140,8 +140,8 @@ def getStandings(url, post):
     standings = []
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    # driver = webdriver.Chrome("/home/axel/chromedriver", options=chrome_options)
-    driver = webdriver.Chrome("/Users/axelcurso/chromedriver", options=chrome_options)
+    driver = webdriver.Chrome("/home/axel/chromedriver", options=chrome_options)
+    # driver = webdriver.Chrome("/Users/axelcurso/chromedriver", options=chrome_options)
     driver.get(url)
     if (check_exists_by_class(driver, "didomi-continue-without-agreeing")):
         continueWithoutAgreeing = driver.find_element_by_class_name("didomi-continue-without-agreeing")
