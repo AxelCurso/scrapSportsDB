@@ -25,7 +25,7 @@ header = ["id", "date", "hour", "leagueMatchNb", "idHome", "homeTeam", "idAway",
 pd.set_option('display.max_columns', None)
 for i in range(nbYearToGet):
     print("Changing abbreviations' team for year: " + str(int(year)-i) + "-" + str(int(year)-i+1))
-    dict_lookup = dict(zip(namesToIds['ligue1'], namesToIds['abbr']))
+    dict_lookup = dict(zip(namesToIds['ligue2'], namesToIds['abbr']))
     dictIds = dict(zip(namesToIds['abbr'], namesToIds['id']))
     # dict_lookup = {k: dict[k] for k in dict if isinstance(k, str)}
     if year >= 2020:
