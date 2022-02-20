@@ -210,8 +210,12 @@ header =    [
 datas = []
 bar = ShadyBar("  - Getting all the matchs' stats from "+str(days[0])+" to "+str(days[-1]), max=len(matchsLinks), suffix="%(index)d/%(max)d | %(percent)d%% => %(elapsed)dsec. | ETA: %(eta)dsec.")
 for i in range(len(matchsLinks)):
-    datas.append(getMatchStats(matchsLinks[i], int(str(today.year)+"{:05d}".format(i))))
-    bar.next()
+    try:
+        datas.append(getMatchStats(matchsLinks[i], int(str(today.year)+"{:05d}".format(i))))
+        bar.next()
+    except Exception as e:
+        bar.next()
+        continue
 bar.finish()
 pd.DataFrame(datas).to_csv("./tmp_raw_matchs.csv", header=header, index=None)
 print("   Data saved: ./tmp_raw_matchs.csv")
