@@ -25,4 +25,5 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 24,REIMS,27,6,9,9,27,28,-1
 25,REIMS,28,6,10,9,28,29,-1
 26,ANGERS SCO,29,7,8,11,31,38,-7
-27,ANGERS SCO,29,7,8,11,31,38,-7
+27,ANGERS SCO,29,7,8,12,31,40,-9
+28,ANGERS SCO,29,7,8,12,31,40,-9

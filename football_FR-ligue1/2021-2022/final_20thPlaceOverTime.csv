@@ -25,4 +25,5 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 24,FCGB,20,4,8,12,36,61,-25
 25,FCGB,21,4,9,12,37,62,-25
 26,FCGB,22,4,10,12,38,63,-25
-27,FCGB,22,4,10,12,38,63,-25
+27,FCGB,22,4,10,13,38,65,-27
+28,FCGB,22,4,10,13,38,65,-27
