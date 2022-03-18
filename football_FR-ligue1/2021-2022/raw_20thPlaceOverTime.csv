@@ -26,4 +26,5 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 25,BORDEAUX,21,4,9,12,37,62,-25
 26,BORDEAUX,22,4,10,12,38,63,-25
 27,BORDEAUX,22,4,10,13,38,65,-27
-28,BORDEAUX,22,4,10,13,38,65,-27
+28,BORDEAUX,22,4,10,14,38,68,-30
+29,BORDEAUX,22,4,10,14,38,68,-30
