@@ -28,4 +28,5 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 27,TROYES,25,6,7,14,25,41,-16
 28,CLERMONT,28,7,7,14,27,48,-21
 29,FC LORIENT,28,6,10,13,24,43,-19
-30,FC LORIENT,28,6,10,13,24,43,-19
+30,FC LORIENT,28,6,10,14,25,48,-23
+31,FC LORIENT,31,7,10,14,31,50,-19

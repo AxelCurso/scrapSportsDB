@@ -28,4 +28,5 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 27,PSG,62,19,5,3,56,24,32
 28,PSG,65,20,5,3,59,24,35
 29,PSG,65,20,5,4,59,27,32
-30,PSG,65,20,5,4,59,27,32
+30,PSG,68,21,5,4,64,28,36
+31,PSG,71,22,5,4,70,29,41

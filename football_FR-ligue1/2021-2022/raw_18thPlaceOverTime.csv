@@ -28,4 +28,5 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 27,FC LORIENT,24,5,9,13,22,43,-21
 28,ASSE,26,6,8,14,28,50,-22
 29,ASSE,27,6,9,14,29,51,-22
-30,ASSE,27,6,9,14,29,51,-22
+30,ASSE,27,6,9,15,31,55,-24
+31,ASSE,27,6,9,16,33,61,-28
