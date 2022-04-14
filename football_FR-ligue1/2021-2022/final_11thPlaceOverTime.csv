@@ -29,4 +29,5 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 28,MHSC,38,11,5,12,41,40,1
 29,MHSC,41,12,5,12,43,40,3
 30,MHSC,41,12,5,13,44,42,2
-31,MHSC,41,12,5,13,44,42,2
+31,MHSC,41,12,5,14,44,44,0
+32,MHSC,41,12,5,14,44,44,0

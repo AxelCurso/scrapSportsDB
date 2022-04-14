@@ -29,4 +29,5 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 28,ASM,41,11,8,9,40,30,10
 29,RCL,44,12,8,9,45,39,6
 30,FCN,45,13,6,11,39,33,6
-31,FCN,45,13,6,11,39,33,6
+31,RCL,47,13,8,10,48,40,8
+32,RCL,47,13,8,10,48,40,8
