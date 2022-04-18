@@ -30,4 +30,5 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 29,LOSC,46,12,10,7,38,35,3
 30,AS MONACO,47,13,8,9,45,31,14
 31,AS MONACO,50,14,8,9,47,32,15
-32,AS MONACO,50,14,8,9,47,32,15
+32,AS MONACO,53,15,8,9,50,34,16
+33,AS MONACO,53,15,8,9,50,34,16

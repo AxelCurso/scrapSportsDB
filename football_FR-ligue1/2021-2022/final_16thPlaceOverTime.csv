@@ -30,4 +30,5 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 29,FCL,28,6,10,13,24,43,-19
 30,FCL,28,6,10,14,25,48,-23
 31,FCL,31,7,10,14,31,50,-19
-32,FCL,31,7,10,14,31,50,-19
+32,FCL,31,7,10,15,32,52,-20
+33,FCL,31,7,10,15,32,52,-20

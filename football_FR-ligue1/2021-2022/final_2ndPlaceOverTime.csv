@@ -30,4 +30,5 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 29,OM,53,15,8,6,45,27,18
 30,OM,56,16,8,6,49,29,20
 31,OM,59,17,8,6,51,29,22
-32,OM,59,17,8,6,51,29,22
+32,OM,59,17,8,7,52,31,21
+33,OM,59,17,8,7,52,31,21

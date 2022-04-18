@@ -30,4 +30,5 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 29,REIMS,36,8,12,9,32,31,1
 30,BREST,38,10,8,12,38,44,-6
 31,BREST,39,10,9,12,39,45,-6
-32,BREST,39,10,9,12,39,45,-6
+32,BREST,39,10,9,13,40,47,-7
+33,BREST,39,10,9,13,40,47,-7
