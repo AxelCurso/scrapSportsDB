@@ -179,12 +179,13 @@ else:
 print("Getting data for year: " + str(year) + "-" + str(year+1))
 standing = pd.read_csv(str(year)+"-"+str(year+1)+"/raw_standing.csv")
 matchs = pd.read_csv(str(year)+"-"+str(year+1)+"/raw_matchs.csv")
-maxNb = max(standing["leagueMatchNb"].values)-1
+maxNb = max(standing["leagueMatchNb"].values)
 nbs = [i for i in range(1,maxNb+1)]
 tmp = [0 for _ in range(maxNb)]
 for i in range(len(matchs)):
     tmp[matchs.iloc[i]["leagueMatchNb"]-1] += 1
 toDo = []
+# print(maxNb)
 for i in range(maxNb):
     if tmp[i] != 10:
         toDo.append(nbs[i])
@@ -195,6 +196,7 @@ for day in toDo:
     print("    Gettting matchs' stats for match day number: " + str(day))
     url = "https://www.ligue1.fr/calendrier-resultats?seasonId=&matchDay=" + str(day)
     tmpMatchs += getMatchStats(url)
+# print(tmpMatchs)
 tmpNew = pd.DataFrame(tmpMatchs)
 header = ["id", "date", "hour", "leagueMatchNb", "idHome", "homeTeam", "idAway", "awayTeam", "h_score", "a_score", "h_possession", "h_duelsWon", "h_aerialDuelsWon", "h_interceptions", "h_offPlays", "h_corners", "h_passes", "h_longPasses", "h_succeededPasses", "h_succeededPassesOppositeSide", "h_centers", "h_succeededCenters", "h_shots", "h_targetedShots", "h_counteredShots", "h_extSurfaceShots", "h_intSurfaceShots", "h_precisionShots", "h_tackles", "h_succeededTackles", "h_clears", "h_concededFaults", "h_yellowCards", "h_redCards", "a_possession", "a_duelsWon", "a_aerialDuelsWon", "a_interceptions", "a_offPlays", "a_corners", "a_passes", "a_longPasses", "a_succeededPasses", "a_succeededPassesOppositeSide", "a_centers", "a_succeededCenters", "a_shots", "a_targetedShots", "a_counteredShots", "a_extSurfaceShots", "a_intSurfaceShots", "a_precisionShots", "a_tackles", "a_succeededTackles", "a_clears", "a_concededFaults", "a_yellowCards", "a_redCards"]
 tmpNew.columns = ["id", "date", "hour", "leagueMatchNb", "idHome", "homeTeam", "idAway", "awayTeam", "h_score", "a_score", "h_possession", "h_duelsWon", "h_aerialDuelsWon", "h_interceptions", "h_offPlays", "h_corners", "h_passes", "h_longPasses", "h_succeededPasses", "h_succeededPassesOppositeSide", "h_centers", "h_succeededCenters", "h_shots", "h_targetedShots", "h_counteredShots", "h_extSurfaceShots", "h_intSurfaceShots", "h_precisionShots", "h_tackles", "h_succeededTackles", "h_clears", "h_concededFaults", "h_yellowCards", "h_redCards", "a_possession", "a_duelsWon", "a_aerialDuelsWon", "a_interceptions", "a_offPlays", "a_corners", "a_passes", "a_longPasses", "a_succeededPasses", "a_succeededPassesOppositeSide", "a_centers", "a_succeededCenters", "a_shots", "a_targetedShots", "a_counteredShots", "a_extSurfaceShots", "a_intSurfaceShots", "a_precisionShots", "a_tackles", "a_succeededTackles", "a_clears", "a_concededFaults", "a_yellowCards", "a_redCards"]
