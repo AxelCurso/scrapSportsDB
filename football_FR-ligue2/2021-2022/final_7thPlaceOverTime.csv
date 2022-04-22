@@ -32,4 +32,5 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 31,EAG,42,10,12,9,35,37,-2
 32,HAC,44,11,11,10,32,34,-2
 33,SMC,46,12,10,11,47,36,11
-34,SMC,46,12,10,11,47,36,11
+34,EAG,48,12,12,10,42,42,0
+35,EAG,48,12,12,10,42,42,0
