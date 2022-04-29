@@ -32,3 +32,5 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 31,SDR,36,8,12,11,34,35,-1
 32,SDR,37,8,13,11,34,35,-1
 33,SDR,40,9,13,11,36,36,0
+34,SDR,40,9,13,12,36,37,-1
+35,SDR,40,9,13,12,36,37,-1
