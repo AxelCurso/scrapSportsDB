@@ -33,4 +33,5 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 32,SRFC,56,17,5,10,69,34,35
 33,SRFC,56,17,5,11,70,36,34
 34,SRFC,59,18,5,11,75,36,39
-35,SRFC,59,18,5,11,75,36,39
+35,SRFC,62,19,5,11,77,36,41
+36,ASM,65,19,8,9,59,36,23

@@ -34,3 +34,4 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 33,MONTPELLIER,42,12,6,15,44,46,-2
 34,BREST,45,12,9,13,43,48,-5
 35,BREST,48,13,9,13,45,48,-3
+36,BREST,48,13,9,14,45,49,-4

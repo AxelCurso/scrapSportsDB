@@ -34,3 +34,4 @@ leagueMatchNb,teamName,points,wins,draws,loses,goalsFor,goalsAgainst,goalsDiff
 33,REIMS,40,9,13,11,36,36,0
 34,REIMS,40,9,13,12,36,37,-1
 35,MONTPELLIER,43,12,7,16,48,53,-5
+36,MONTPELLIER,43,12,7,17,49,55,-6
